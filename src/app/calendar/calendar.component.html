@@ -1,0 +1,62 @@
+<!-- Button trigger modal
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ADD NOTE</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <p>Ian 12 2021</p>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Note:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save Note</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="calendar">
+    <div class="month">
+      <i (click)="goToPreviousMonth()" class="fa fa-angle-left prev"></i>
+      <div class="date">
+        <h1>{{siteObject.currentMonth}}</h1>
+        <p>{{siteObject.currentDay}}</p>
+      </div>
+      <i (click)="goToNextMonth()" class="fa fa-angle-right next"></i>
+    </div>
+    <div class="weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    <div class="days">
+      <div data-toggle="modal" data-target="#exampleModal" *ngFor="let previousDays of siteObject.previousMonthDays" class="prev-date fa fa-circle">{{previousDays}}</div>
+      <div *ngFor="let day of siteObject.daysOfThiMonth">{{day}}</div>
+      <div *ngFor="let nextDays of siteObject.nextMonthDays" class="next-date">{{nextDays}}</div>
+
+    </div>
+  </div>
+</div>
+
+
