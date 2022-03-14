@@ -22,10 +22,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('calendar');
   });
 
-  it('should render title', () => {
+  it('should render calendar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('calendar app is running!');
+    expect(compiled.querySelector('.main')?.textContent).toContain('Calendar Loading ...');
   });
 });
